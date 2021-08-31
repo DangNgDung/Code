@@ -1,0 +1,39 @@
+//Tính S(n) = x^2 + x^4 + … + x^2n
+using System;
+
+namespace VietJackCsharp
+{
+    class TestCsharp
+    {
+
+        public static void Main()
+        {
+            int x;
+            int n;
+            Console.Write("\nTao ham mu trong C#:\n");
+            Console.Write("--------------------------------\n");
+            Console.Write("Nhap co so: ");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Nhap luy thua: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Gia tri cua S: {0}",HamPow(x,n));
+
+            Console.ReadKey();
+        }
+        //tao ham mu tu dinh nghia
+        public static int HamPow(int x, int n)
+        {
+            int T = 2 ,S = 0;
+            int i;
+            for (i = 1; i <= n; i++)
+            {
+                T = T * (i*x);
+                S+=T;
+                
+            }
+            return S;
+        }  
+        
+
+    }
+} 
