@@ -1,0 +1,26 @@
+//Tính S(n) = x + x^2 + x^3 + … + x^n
+using System;
+
+namespace Program
+{
+    class TestCsharp
+    {
+
+        public static void Main()
+        {
+            int n,x;
+            float T=1,S=0;
+            Console.Write("Nhap x: ");
+            x=Convert.ToInt32(Console.ReadLine());
+            Console.Write("Nhap n: ");
+            n=Convert.ToInt32(Console.ReadLine());
+            for (int i=1;i<=n;i++)
+            {
+                T*=x;
+                S+=T;
+            }
+            Console.Write("Tong la: " + S);
+        }
+
+    }
+} 
