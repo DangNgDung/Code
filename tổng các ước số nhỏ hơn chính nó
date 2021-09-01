@@ -1,0 +1,36 @@
+//Cho số nguyên dương n. Tính tổng các ước số nhỏ hơn chính nó
+using System;
+
+namespace Program
+{
+    class TestCsharp
+    {
+      
+        public static void Main()
+        {
+            int n;
+            long S=0;
+            do
+            {
+                Console.Write("Nhap n(n>0): ");
+                n = Convert.ToInt32(Console.ReadLine());
+                if(n <= 0)
+                {
+                    Console.Write("N phai > 0. Moi nhap lai !");
+                }
+            }
+            while(n <= 0);
+            Console.Write("Uoc nho hon chinh nó: ");
+            for(int i = 1; i < n; i++)
+            {
+                if(n % i == 0)
+                {
+                    Console.Write(i + " ");
+                    S += i;
+                }
+            }
+            Console.Write($"\nTong so uoc nho hon chinh no: {S}");
+            
+        }
+    }
+}
