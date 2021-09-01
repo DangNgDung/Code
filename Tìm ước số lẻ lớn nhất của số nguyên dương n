@@ -1,0 +1,36 @@
+//Tìm ước số lẻ lớn nhất của số nguyên dương n. Ví dụ n = 100 ước lẻ lớn nhất là 25
+using System;
+
+namespace myApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n, max = 1;
+            do
+            {
+                Console.Write("Nhap n(n>0): ");
+                n = Convert.ToInt32(Console.ReadLine());
+                if(n <= 0)
+                {
+                    Console.WriteLine("N phai > 0. Xin nhap lai!");
+                }
+            }
+            while(n <= 0);
+            Console.Write("Cac uoc so le la: ");
+            for(int i = 1; i <= n; i++)
+            {
+                if((n % i == 0) && (i % 2 == 1))
+                {
+                    if(i > max)
+                    {
+                        max = i;
+                    }
+                    Console.Write(i + " ");
+                }
+            }
+            Console.WriteLine($"\nUoc so le lon nhat là: {max}");
+        }
+    }
+}
