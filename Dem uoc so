@@ -1,0 +1,47 @@
+//Đếm số lượng “ước số” của số nguyên dương n
+using System;
+
+namespace Program
+{
+    class TestCsharp
+    {
+      
+        public static void Main()
+        {
+            int n;
+            int count=0, count_L=0, count_C=0;
+            do
+            {
+                Console.Write("Nhap n(n>0): ");
+                n = Convert.ToInt32(Console.ReadLine());
+                if(n <= 0)
+                {
+                    Console.Write("N phai > 0. Moi nhap lai !");
+                }
+            }
+            while(n <= 0);
+            Console.Write("Uoc cua so nguyen duong n: ");
+            for(int i = 1; i <= n; i++)
+            {
+                if(n % i == 0)
+                {
+                    Console.Write(i + " ");
+                    count++;
+                    if(i % 2 == 0)
+                    {
+                        //Console.Write(i + " ");
+                        count_C++;
+                    }
+                    else
+                    {
+                        //Console.Write(i + " ");
+                        count_L++;
+                    }
+                }
+            }
+            Console.Write($"\nTong so uoc cua so nguyen n: {count}");
+            Console.Write($"\nSo uoc chan cua so nguyen n: {count_C}");
+            Console.Write($"\nSo uoc le cua so nguyen n: {count_L}");
+        }
+    }
+}
