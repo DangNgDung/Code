@@ -1,0 +1,42 @@
+//Cho số nguyên dương n. Kiểm tra xem n có phải là số nguyên tố hay không
+using System;
+
+namespace myApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i, n;
+            Console.WriteLine("Kiem tra xem n co phai so nguyen to hay không?");
+            Console.WriteLine("----------------------------------------------------");
+            Console.Write("Nhap n: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            if(n < 2)
+            {
+                Console.Write($"{n} khong phai so nguyen to.");
+            }
+            else if(n == 2)
+            {
+                Console.Write($"{n} la so nguyen to.");
+            }
+            else if(n % 2 == 0)
+            {
+                Console.Write($"{n} khong phai so nguyen to.");
+            }
+            else
+            {
+                for(i = 3; i <= n; i+=2)
+                {
+                    if(n % i == 0)
+                        break;
+                }
+                if(i == n)
+                    Console.Write($"{n} la so nguyen to.");
+                else    
+                    Console.Write($"{n} khong phai so nguyen to.");
+            }
+        }
+    }
+}
+
