@@ -1,0 +1,33 @@
+//Liệt kê tất cả các “ước số” của số nguyên dương n
+using System;
+
+namespace Program
+{
+    class TestCsharp
+    {
+      
+        public static void Main()
+        {
+            int n;
+            do
+            {
+                Console.Write("Nhap n(n>0): ");
+                n = Convert.ToInt32(Console.ReadLine());
+                if(n <= 0)
+                {
+                    Console.WriteLine("N phai > 0. Moi nhap lai !");
+                }
+            }
+            while(n <= 0);
+            Console.Write("Uoc cua so nguyen duong n: ");
+            for(int i = 1; i <= n; i++)
+            {
+                if(n % i == 0)
+                {
+                        Console.Write(i + " ");
+                }
+            }
+            
+        }
+    }
+}
