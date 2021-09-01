@@ -1,0 +1,31 @@
+//Cho số nguyên dương n. Kiểm tra xem n có phải là số chính phương hay không
+using System;
+
+namespace myApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n;
+            Console.WriteLine("Kiem tra xem n co phai la so chinh phuong hay khong ?");
+            Console.WriteLine("---------------------------------------------------");
+            do
+            {
+                Console.Write("Nhap n: ");
+                n = Convert.ToInt32(Console.ReadLine());
+                if(n <= 0)
+                    Console.WriteLine("N phai > 0. Xin nhap lai!");
+            }while(n <= 0);
+            if(Math.Sqrt((float)n) == (int)Math.Sqrt((float)n))
+            {
+                Console.WriteLine($"{n} La so chinh phuong.");
+            }
+            else
+            {
+                Console.WriteLine($"{n} Khong la so chinh phuong.");
+            }
+        }
+    }
+}
+
