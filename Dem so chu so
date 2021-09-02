@@ -1,0 +1,34 @@
+//Hãy đếm số lượng chữ số của số nguyên dương n
+using System;
+
+namespace Csharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            long themang, n;
+            int sochuso;
+            Console.WriteLine("So luong chu so cua so nguyen duong n.");
+            Console.WriteLine("--------------------------------------------");
+            do
+            {
+                Console.Write("Nhap n: ");
+                n = Convert.ToInt32(Console.ReadLine());
+                if(n < 0)
+                    Console.WriteLine("N phai >= 0. Xin nhap lai!");
+            }while(n < 0);
+            sochuso = 0;
+            themang = n;
+            if(n == 0)
+                sochuso = 1;
+           while(themang != 0)
+           {
+               sochuso = sochuso + 1;
+               themang = themang / 10;
+           }
+           Console.WriteLine($"So chu so cua {n} la: {sochuso}");
+        }
+    }
+}
+
