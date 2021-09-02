@@ -1,0 +1,32 @@
+//Hãy tính tổng các chữ số của số nguyên dương n
+using System;
+
+namespace Csharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int themang, n;
+            int S = 0;
+            Console.WriteLine("Tinh tong cac chu so cua so nguyen n.");
+            Console.WriteLine("------------------------------------");
+            do
+            {
+                Console.Write("Nhap n: ");
+                n = Convert.ToInt32(Console.ReadLine());
+                if(n < 0)
+                    Console.WriteLine("N phai >= 0. Xin nhap lai!");
+            }while(n < 0);
+            themang = n;
+           
+           while(themang != 0)
+           {
+               S = S + themang % 10;
+               themang = themang / 10;
+           }
+           Console.WriteLine($"Tong la: {S}");
+        }
+    }
+}
+
