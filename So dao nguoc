@@ -1,0 +1,31 @@
+//Hãy tìm số đảo ngược của số nguyên dương n
+using System;
+
+namespace Csharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n;
+            int SoNgichDao = 0;
+            Console.WriteLine("Hoc Lap Trinh Cung Learn2401.");
+            Console.WriteLine("-----------------------------");
+            do
+            {
+                Console.Write("Nhap n: ");
+                n = Convert.ToInt32(Console.ReadLine());
+                if(n < 0)
+                    Console.WriteLine("N phai >= 0. Xin nhap lai!");
+            }while(n < 0);
+            
+            do
+            {
+                SoNgichDao = SoNgichDao * 10 + n % 10;
+                n /= 10;    
+            }while(n != 0);
+           Console.WriteLine($"So dao nguoc la: {SoNgichDao}");
+        }
+    }
+}
+
