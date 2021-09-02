@@ -1,0 +1,31 @@
+//Cho số nguyên dương n. Hãy tìm chữ số đầu tiên của n
+using System;
+
+namespace Csharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int themang, n, i;
+            
+            Console.WriteLine("Chu so dau tien cua n.");
+            Console.WriteLine("------------------------------------");
+            do
+            {
+                Console.Write("Nhap n: ");
+                n = Convert.ToInt32(Console.ReadLine());
+                if(n < 0)
+                    Console.WriteLine("N phai >= 0. Xin nhap lai!");
+            }while(n < 0);
+            themang = n;
+           do
+           {
+               i = themang % 10;
+               themang /= 10;
+           }while(themang != 0);
+           Console.WriteLine($"Chu so dau tien la: {i}");
+        }
+    }
+}
+
