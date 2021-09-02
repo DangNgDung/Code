@@ -1,4 +1,3 @@
-//Hãy tính tổng các chữ số của số nguyên dương n
 using System;
 
 namespace Csharp
@@ -8,8 +7,8 @@ namespace Csharp
         static void Main(string[] args)
         {
             int themang, n;
-            int S = 0;
-            Console.WriteLine("Tinh tong cac chu so cua so nguyen n.");
+            int S = 0, P = 1;
+            Console.WriteLine("Tinh tong va tich cac chu so cua so nguyen n.");
             Console.WriteLine("------------------------------------");
             do
             {
@@ -23,9 +22,11 @@ namespace Csharp
            while(themang != 0)
            {
                S = S + themang % 10;
+               P = P * (themang % 10);
                themang = themang / 10;
            }
-           Console.WriteLine($"Tong la: {S}");
+           Console.WriteLine($"Tong cac chu so cua n la: {S}");
+           Console.WriteLine($"Tich cac chu so cua n la: {P}");
         }
     }
 }
