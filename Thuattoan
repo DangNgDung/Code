@@ -1,0 +1,29 @@
+using System;
+
+namespace Csharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n, i=0;
+            float S=0;
+            Console.WriteLine("Gia tri nguyen duong k lon nhat sao cho S(k) < n.");
+            Console.WriteLine("---------------------------------------------------");
+            do
+            {
+                Console.Write("Nhap n: ");
+                n = Convert.ToInt32(Console.ReadLine());
+                if(n < 0)
+                    Console.WriteLine("N phai > 0. Xin nhap lai!");
+            }while(n < 0);
+           while(S + i < n)
+           {
+               i++;
+               S += i;
+           }
+           Console.WriteLine($"Gia tri k lon nhat de S(k) = 1 + 2 + ... + k < n la: {i}");
+        }
+    }
+}
+
