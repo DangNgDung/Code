@@ -1,0 +1,53 @@
+//Xuất bảng cửu chương sử dụng mảng 2 chiều
+using System;
+
+namespace MultiDimension
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Multiplication table";
+
+            // khai báo và khởi tạo mảng hai chiều chứa bảng cửu chương
+            var multiplications = new int[10, 10];
+
+            // gán giá trị cho các phần tử của bảng cửu chương
+            for (int r = 0; r < multiplications.GetLength(0); r++)
+            {
+                for (int c = 0; c < multiplications.GetLength(1); c++)
+                {
+                    multiplications[r, c] = (r + 1) * (c + 1);
+                }
+            }
+
+            // in ra màn hình
+            for (int c = 0; c <= multiplications.GetLength(1); c++)
+            {
+                //So 4 la moi cot cach nhau 4 khoang trang.
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                if (c == 0) 
+                {
+                    Console.Write("{0, 4}", "");
+                }
+                else
+                    Console.Write("{0, 4}", c);
+            }
+            Console.WriteLine();
+            for (int r = 0; r < multiplications.GetLength(0); r++)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("{0, 4}", r + 1);
+                Console.ResetColor();
+
+                for (int c = 0; c < multiplications.GetLength(1); c++)
+                {
+                    Console.Write("{0, 4}", multiplications[r, c]);
+                }
+                Console.WriteLine();
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
