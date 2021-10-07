@@ -1,0 +1,30 @@
+//Viết chương trình in ra tất cả các số lẻ nhỏ hơn 100 trừ các số 5, 7, 93
+using System;
+using static System.Console;
+
+namespace MultiDimension
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Write("Nhap N: ");
+            int n=int.Parse(ReadLine());
+            for(int i=0;i<n;i++)
+            {
+                if(i%2!=0)
+                {
+                    if(i==5 || i==7||i==93)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        Write(i+" ");
+                    }
+                }
+            }
+
+        }
+    }
+}
