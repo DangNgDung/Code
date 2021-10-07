@@ -1,0 +1,51 @@
+//Viết chương trình nhập 3 cạnh của 1 tam giác, cho biết đó là tam giác gì
+using System;
+using static System.Console;
+
+namespace CSharp
+{
+    class Program
+    {
+        static void KiemTraTamGiac(int a, int b, int c)
+        {
+            if(a + b <= c || a + c <= b || b + c <= a)
+            {
+                Write("Tam giac khong hop le. Xin kiem tra lai!!");
+            }
+            else
+            {
+                Write("Day la tam giac ");
+                if(a==b && b==c)
+                {
+                    Write("Deu");
+                }
+                else
+                {
+                    if(a * a + b * b == c * c || a * c + c * c == b * b || b * b + c * c == a * c)
+                    {
+                        Write("Vuong");
+                    }
+                    if(a == b || a == c || b == c)
+                    {
+                        Write("Can");
+                    }
+                    else
+                    {
+                        Write("Thuong");
+                    }
+                }
+            }
+        }
+        static void Main(string[] args)
+        {
+            Write("Nhap a: ");
+            int a=int.Parse(ReadLine());
+            Write("Nhap b: ");
+            int b=int.Parse(ReadLine());	
+            Write("Nhap c: ");
+            int c=int.Parse(ReadLine());
+            KiemTraTamGiac(a, b, c);
+            ReadKey();
+        }
+    }
+}
