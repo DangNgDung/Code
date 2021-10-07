@@ -1,0 +1,27 @@
+//Viết chương trình nhập 3 số thực. Hãy thay tất cả các số âm bằng trị tuyệt đối của nó
+using System;
+using static System.Console;
+
+namespace CSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Write("Nhap a: ");
+            int a = int.Parse(ReadLine());
+            Write("Nhap b: ");
+            int b = int.Parse(ReadLine());
+            Write("Nhap c: ");
+            int c = int.Parse(ReadLine());
+            if(a<0)
+            a = -a;
+            if(b<0)
+            b = -b;
+            if(c<0)
+            c = -c;
+            Write($"Gia tri tuyet doi cua a, b, c la: {a} {b} {c} ");
+
+        }
+    }
+}
