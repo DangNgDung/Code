@@ -1,0 +1,63 @@
+//Viết chương trình nhập tháng, năm. Hãy cho biết tháng đó có bao nhiêu ngày
+using System;
+using static System.Console;
+
+namespace CSharp
+{
+    class Program
+    {
+        
+        static void TimSoNgayTrongThang(int thang, int nam)
+        {
+            switch(thang)
+            {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                Write($"Thang {thang} nam {nam} co 31 ngay.");
+                break;
+            case 4: case 6: case 9: case 11:
+                Write($"Thang {thang} nam {nam} co 30 ngay.");
+                break;
+            case 2:
+                //int check = KiemTraNamNhuan(nam);
+                if((nam % 4 == 0 && nam % 100 != 0) || (nam % 400 == 0))
+                {
+                    Write($"Thang {thang} nam {nam} co 29 ngay.");
+                }
+                else
+                {
+                    Write($"Thang {thang} nam {nam} co 28 ngay.");
+                }
+                break;
+            }
+        }
+        
+        static void Main(string[] args)
+        {
+            
+            int thang;
+            int nam;
+            int mixYear = 1900;
+            int maxYear = 10000;
+            do
+            {
+                Write("Nhap thang: ");
+                thang = int.Parse(ReadLine());
+                if(thang<1 || thang>12)
+                {
+                    WriteLine("K hop le.");
+                }
+            }while(thang < 1 || thang > 12);
+            do
+            {
+                Write("Nhap nam: ");
+                nam = int.Parse(ReadLine());
+                if(nam < mixYear || nam > maxYear)
+                {
+                    WriteLine("K hop le.");
+                }
+            }while(nam < mixYear || nam > maxYear);
+            TimSoNgayTrongThang(thang, nam);
+            //ReadKey();
+        }
+    }
+}
