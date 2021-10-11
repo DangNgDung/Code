@@ -1,0 +1,27 @@
+//In số Fibonacci thứ n trong C#
+using System;
+using static System.Console;
+namespace CSharp
+{
+    class Program
+    {
+        static int InFibonacci(int num)
+        {
+            if(num == 0)
+                return 0;
+            else if(num == 1)
+                return 1;
+            else
+                return (InFibonacci(num - 1) + InFibonacci(num - 2));
+        }
+        static void Main(string[] args)
+        {
+            int numberOfNumbers;
+            Write("Nhap so phan tu cua day Fibonacci: ");
+            numberOfNumbers = int.Parse(ReadLine());
+            numberOfNumbers -= 1;
+            Write($"So Fibonacci thu {numberOfNumbers + 1} la : {InFibonacci(numberOfNumbers)}");
+            ReadKey();
+        }
+    }
+}
