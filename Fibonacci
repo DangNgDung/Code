@@ -1,0 +1,32 @@
+//In dãy Fibonacci
+using System;
+using static System.Console;
+namespace CSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int firstNumber = 0, secondNumber = 1, nextNumber, numberOfElements;
+            Write("So phan tu cua day Fibonacci: ");
+            numberOfElements = int.Parse(ReadLine());
+            if(numberOfElements < 2)
+            {
+                WriteLine("Vui long nhap so lon hon 2.");
+
+            }
+            else
+            {
+                Write("Day Fibonacci: " + firstNumber + " " + secondNumber + " ");
+                for(int i=2;i<numberOfElements;i++)
+                {
+                    nextNumber = firstNumber + secondNumber;
+                    Write(nextNumber + " ");
+                    firstNumber = secondNumber;
+                    secondNumber = nextNumber;
+                }
+            }
+            ReadKey();
+        }
+    }
+}
