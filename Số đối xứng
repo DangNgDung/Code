@@ -1,1 +1,33 @@
-
+//Kiểm tra sô đối xứng
+using System;
+namespace CSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Nhap vao mot so can kiem tra: ");
+            int number = int.Parse(Console.ReadLine());
+            int remineder, sum = 0;
+            int temp = number;
+            while (number > 0)
+            {
+                //Chia lấy dư number cho 10 
+                remineder = number % 10;
+                //nhân tổng với 10 rồi cộng thêm phần dư
+                sum = (sum * 10) + remineder;
+                //chia lấy nguyên cho 10
+                number = number / 10;
+            }
+            if (temp == sum)
+            {
+                Console.WriteLine($"So {temp} la so doi xung.");
+            }
+            else
+            {
+                Console.WriteLine($"So {temp} khong phai so doi xung");
+            }
+            Console.ReadKey();
+        }
+    }
+}
