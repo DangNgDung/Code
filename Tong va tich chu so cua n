@@ -31,3 +31,48 @@ namespace Csharp
     }
 }
 
+
+2.CÁCH KHÁC
+//Tính tổng các chữ số của một số trong C#
+/*using System;
+using static System.Console;
+Write("Nhap so can tinh tong: ");
+int number = int.Parse(ReadLine());
+int sum = 0, reminder;
+while(number > 0)
+{
+    reminder = number % 10;
+    sum = sum + reminder;
+    number = number / 10;
+}
+Write($"Tong {sum}");*/
+
+
+/*Tính tổng các chữ số của một số sử dụng đệ quy trong C#
+using System;
+using static System.Console;
+int SumOfDigits(int number)
+{
+    if(number != 0)
+    {
+        return (number % 10 + SumOfDigits(number / 10));
+    }
+    else
+    {
+        return 0;
+    }
+}
+Write("Nhap so can tinh: ");
+int number = int.Parse(ReadLine());
+int sum = SumOfDigits(number);
+Write($"Tong {sum}");*/
+
+
+//Tính tổng các chữ số của một số sử dụng linq
+using System;
+using static System.Console;
+using System.Linq;
+Write("Nhap so can tinh: ");
+int number = int.Parse(ReadLine());
+int sum = number.ToString().Select(digit => int.Parse(digit.ToString())).ToArray().Sum();
+WriteLine($"Tong : {sum}");
