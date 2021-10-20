@@ -1,0 +1,31 @@
+//Viết chương trình in ra hình chữ nhật có kích thước m x n
+//1. Hình chữ nhật đặc
+//2. Hình chữ nhật rỗng
+using System;
+using static System.Console;
+
+int m, n;
+
+Write("Nhap m: ");
+m = Convert.ToInt32(ReadLine());
+Write("Nhap n: ");
+n = Convert.ToInt32(ReadLine());
+
+for(int i = 1; i <= m; i++)
+{
+    for(int j = 1; j <= n; j++)
+    {
+        Write("*");
+    }
+    WriteLine();
+}
+WriteLine();
+//2.Hình chữ nhật rỗng
+for(int i = 1; i <= m; i++)
+{
+    for(int j = 1; j <= n; j++)
+    {
+        Write(( i == 1 || i == m || j == 1 || j == n ) ? "*" : " ");
+    }
+    WriteLine();
+}
