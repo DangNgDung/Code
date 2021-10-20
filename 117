@@ -1,0 +1,40 @@
+//Viết chương trình nhập n và tính tổng S(n) = x + x^2 + x^3 + … + x^n
+using System;
+using static System.Console;
+namespace CSharpCode
+{
+    class Program
+    {
+        public static float Power(float x, int n )
+        {
+            float t = 1;
+            for(int i = 1; i <= n; i++)
+            {
+                t *= x;
+            }
+            return t;
+        }
+        public static float Sum(float x, int n)
+        {
+            float s = 0;
+            for(int i = 1; i <= n; i++)
+            {
+                s = s + Power(x, i);
+            }
+            return s;
+        }
+        static void Main(string[] args)
+        {
+            WriteLine("Chương trinh nhap n và tính tong S(n) = x + x^2 + x^3 + … + x^n");
+            int n;
+            Write("Nhap n: ");
+            n = int.Parse(ReadLine());
+            float x;
+            Write("Nhap x: ");
+            x = float.Parse(ReadLine());
+            float result = Sum(x, n);
+            WriteLine($"Tong la: {result}");
+            ReadKey();
+        }
+    }
+}
