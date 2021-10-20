@@ -1,0 +1,47 @@
+//Viết chương trình in ra tam giác cân có độ cao h
+1. Tam giác cân đặc nằm giữa màn hình
+2. Tam giác cân rỗng nằm giữa màn hình
+3. Tam giác  vuông cân đặc
+4. Tam giác  vuông cân rỗng
+using System;
+using static System.Console;
+
+int i, j, n;
+Write("Nhap n: ");
+n = int.Parse(ReadLine());
+//Tam giác cân đặc
+for(i = 1; i <= n; i++)
+{
+    for(j = 1; j <= n + i - 1; j++)
+    {
+        Write((j < n - i + 1) ? " " : "*");
+    }
+    WriteLine();
+}
+//Tam giác cân rỗng
+for(i = 1; i <= n; i++)
+{
+    for(j = 1; j <= n + i - 1; j++)
+    {
+        Write((j == n - i + 1 || i == n || j == n + i - 1) ? "*" : " ");
+    }
+    WriteLine();
+}
+//Tam giác vuông đặc
+for(i = 1; i <= n; i++)
+{
+    for(j = 1; j <= n; j++)
+    {
+        Write((j <= i) ? "*" : " ");
+    }
+    WriteLine();
+}
+//Tam giác vuông rỗng
+for(i = 1; i <= n; i++)
+{
+    for(j = 1; j <= n; j++)
+    {
+        Write((i == j || j == 1 || i == n) ? "*" : " ");
+    }
+    WriteLine();
+}
